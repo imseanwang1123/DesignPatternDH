@@ -1,5 +1,8 @@
 package design_pattern.factory_method_pattern;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class FactoryMethodPattern {
 
     public static void main(String[] args) {
@@ -15,6 +18,10 @@ public class FactoryMethodPattern {
         Loader createLoader();
     }
 
+    public interface Loader {
+        void load();
+    }
+
     public static class JsonLoaderFactory implements LoaderFactory {
         @Override
         public Loader createLoader() {
@@ -27,10 +34,6 @@ public class FactoryMethodPattern {
         public Loader createLoader() {
             return new XmlLoader();
         }
-    }
-
-    public interface Loader {
-        void load();
     }
 
     public static class JsonLoader implements Loader {
