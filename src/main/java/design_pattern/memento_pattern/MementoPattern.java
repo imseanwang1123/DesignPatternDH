@@ -11,7 +11,7 @@ public class MementoPattern {
 
         @Getter
         @Setter
-        private final String state;
+        private String state;
     }
 
     public static class Originator {
